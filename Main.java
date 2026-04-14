@@ -1,26 +1,30 @@
-package kasir;
-
-class Kasir {
-
-    int hitungTotal(int a, int b) {
-        return a + b;
-    }
-
-    int hitungTotal(int a, int b, int c) {
-        return a + b + c;
-    }
-
-    double hitungTotal(double a, double b) {
-        return a + b;
+package kendaraan;
+class Kendaraan {
+    void jalan() {
+        System.out.println("Kendaraan sedang berjalan");
     }
 }
-
+class Mobil extends Kendaraan {
+    @Override
+    void jalan() {
+        System.out.println("Mobil berjalan di jalan raya");
+    }
+}
+class Sepeda extends Kendaraan {
+    @Override
+    void jalan() {
+        System.out.println("Sepeda dikayuh di jalan kecil");
+    }
+}
 public class Main {
     public static void main(String[] args) {
-        Kasir k = new Kasir();
+        Kendaraan k = new Kendaraan();
+        k.jalan();
 
-        System.out.println(k.hitungTotal(1000, 2000));
-        System.out.println(k.hitungTotal(1000, 2000, 3000));
-        System.out.println(k.hitungTotal(1000.5, 2000.5));
+        Mobil m = new Mobil();
+        m.jalan();
+
+        Sepeda s = new Sepeda();
+        s.jalan();
     }
 }
